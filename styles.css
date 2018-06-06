@@ -1,0 +1,10 @@
+body {
+  background: #b3cccc;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.container {
+  padding: 200px;
+  text-align: center;
+}
