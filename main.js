@@ -37,20 +37,26 @@ var appState = {
   currentCharacter: 0
 }
 
-console.log(appState)
+
 
 // function that creates the individual div elements on the page for each letter
-function renderLetter(letter) {
+function renderLetter(letter, currentCharacter, index) {
   var $letter = document.createElement('div')
   $letter.textContent = letter.letter
   $letter.style.cssFloat = 'left';
   $letter.style.fontSize = '20px';
   $letter.style.padding = '6px';
+  console.log(letter, currentCharacter, index);
+  if (currentCharacter === index) {
+    $letter.classList.add('currentCharacter') 
+
+
+  }
   //document.$container.appendChild($letter)
   return $letter
 }
 
 // appends the letters from the sentence to the body of the page
 for (var i = 0; i < lettersToType.length; i++) {
-  document.body.appendChild(renderLetter(lettersToType[i]))
+  document.body.appendChild(renderLetter(lettersToType[i], appState.currentCharacter, i))
 }
