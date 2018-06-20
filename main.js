@@ -33,8 +33,10 @@ for (var i = 0; i < letters.length; i++) {
 
 
 var appState = {
-  characters: lettersToType
+  characters: lettersToType,
+  currentCharacter: 0
 }
+
 console.log(appState)
 
 // function that creates the individual div elements on the page for each letter
