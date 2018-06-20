@@ -34,7 +34,8 @@ for (var i = 0; i < letters.length; i++) {
 
 var appState = {
   characters: lettersToType,
-  currentCharacter: 0
+  currentCharacter: 0,
+  failures: 0
 }
 
 
@@ -48,7 +49,7 @@ function renderLetter(letter, currentCharacter, index) {
   $letter.style.padding = '6px';
   console.log(letter, currentCharacter, index);
   if (currentCharacter === index) {
-    $letter.classList.add('currentCharacter') 
+    $letter.classList.add('currentCharacter')
 
 
   }
