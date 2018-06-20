@@ -8,3 +8,7 @@ body {
   padding: 200px;
   text-align: center;
 }
+
+.currentCharacter {
+  font-weight: bold;
+}
