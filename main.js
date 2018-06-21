@@ -74,6 +74,9 @@ window.addEventListener('keydown', function(event) {
     $container.innerHTML = '';
     renderThePhrase()
   }
-  console.log('keydown');
+  else {
+    appState.failures = appState.failures +1;
+  }
   console.log(event.key);
+  console.log(appState.failures)
 })
