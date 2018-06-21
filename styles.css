@@ -12,3 +12,7 @@ body {
 .currentCharacter {
   color: white;
 }
+
+.failed {
+  color: red;
+}

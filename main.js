@@ -60,6 +60,7 @@ function renderLetter(letter, currentCharacter, index) {
   return $letter
 }
 
+
 // "renders" all the letters from the sentence to the container
 function renderThePhrase() {
   for (var i = 0; i < lettersToType.length; i++) {
@@ -76,7 +77,10 @@ window.addEventListener('keydown', function(event) {
   }
   else {
     appState.failures = appState.failures +1;
+    var $currentChar = document.querySelector('.currentCharacter')
+    $currentChar.classList.add('failed')
   }
-  console.log(event.key);
-  console.log(appState.failures)
+  console.log('key pressed ' + event.key);
+  console.log('total failures ' + appState.failures)
+  console.log('currentCharacter ' + appState.currentCharacter);
 })
