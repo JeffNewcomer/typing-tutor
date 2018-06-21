@@ -16,7 +16,7 @@ document.body.appendChild($container)
 $container.style.textAlign = 'center'
 $container.style.width = 'auto'
 $container.style.height = '32px'
-//$container.style.border = "2px solid black"
+$container.style.border = "2px solid black"
 
 
 var textToType = 'grumpy wizards make toxic brew for the evil queen and jack'
@@ -50,7 +50,7 @@ function renderLetter(letter, currentCharacter, index) {
   $letter.style.cssFloat = 'left';
   $letter.style.fontSize = '17px';
   $letter.style.padding = '6px';
-  //$letter.style.border = 'solid black 1px'
+  $letter.style.border = 'solid black 1px'
 
 
   // changes the current letter's color to white
