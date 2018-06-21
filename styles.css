@@ -1,0 +1,14 @@
+body {
+  background: #b3cccc;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  padding: 200px;
+  text-align: center;
+}
+
+.currentCharacter {
+  color: white;
+}
