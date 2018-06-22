@@ -2,17 +2,11 @@
 var $title = document.createElement('div')
 $title.textContent = "Typing Tutor"
 document.body.appendChild($title)
-$title.style.fontSize = '50px'
-$title.style.textAlign = 'center'
-$title.style.padding = '100px'
+$title.classList.add('largerText')
 
 // creates a div container to hold the individual div elements that contain each letter in the "grumpy' phrase"
 var $container = document.createElement('div')
 document.body.appendChild($container)
-$container.style.textAlign = 'center'
-$container.style.width = 'auto'
-$container.style.height = '32px'
-// $container.style.border = "2px solid black"
 
 var textToType = 'grumpy wizards make toxic brew for the evil queen and jack'
 var lettersToType = []
@@ -42,9 +36,7 @@ var appState = {
 function renderLetter(letter, currentCharacter, index) {
   var $letter = document.createElement('div')
   $letter.textContent = letter.letter
-  $letter.style.cssFloat = 'left';
-  $letter.style.fontSize = '17px';
-  $letter.style.padding = '6px';
+  $letter.classList.add('smallLetters')
 
   // changes the current letter's color to white
   if (currentCharacter === index) {
@@ -72,30 +64,19 @@ window.addEventListener('keydown', function(event) {
     var $currentChar = document.querySelector('.currentCharacter')
     $currentChar.classList.add('failed')
   }
-  if (appState.currentCharacter === 58) {
+  if (appState.currentCharacter === textToType.length) {
     calculateScore()
     var score = calculateScore()
     $scoreContainer.textContent = 'Game Over! Your score was ' + score + '%'
   }
 })
 
-// creates a div element to hold the Typing Tutor Text
+// creates a div element to hold the individual letters and the final score
 var $scoreContainer = document.createElement('div')
 document.body.appendChild($scoreContainer)
-$scoreContainer.style.fontSize = '50px'
-$scoreContainer.style.textAlign = 'center'
-$scoreContainer.style.padding = '100px'
-$scoreContainer.style.height = '200px'
+$scoreContainer.classList.add('largerText')
 
 function calculateScore() {
-  var calc = (((58 - appState.failures) / 58) * 100)
+  var calc = (((textToType.length - appState.failures) / textToType.length) * 100)
   return Math.round(calc)
 }
-
-window.addEventListener('keydown', function(event) {
-  if (appState.currentCharacter === 58) {
-    calculateScore()
-    var score = calculateScore()
-    $scoreContainer.textContent = 'Game Over! Your score was ' + score + '%'
-  }
-})
